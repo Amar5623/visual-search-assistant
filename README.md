@@ -128,10 +128,10 @@ Follow these steps to set up and run the project locally:
 ## 📸 Screenshots
 
 ### Image Upload Interface  
-![Upload](path-to-upload-screenshot.png)
+![Upload](Image-Upload-Interface.png)
 
 ### Description and Audio Output  
-![Description](path-to-description-screenshot.png)
+![Description](Description-and-Audio-Output.png)
 
 ---
 
