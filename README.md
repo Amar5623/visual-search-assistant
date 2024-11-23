@@ -51,6 +51,7 @@ The **Visual Search Assistant** is a multimodal GenAI application that combines 
 
 ## 🛠 Installation Guide
 
+###Installation Guide for local platform
 Follow these steps to set up and run the project locally:
 
 ### 1. Prerequisites
@@ -75,6 +76,9 @@ Follow these steps to set up and run the project locally:
 
 3. Install dependencies:  
    ```bash
+   cd backend
+   sudo apt-get install espeak-ng
+   sudo apt-get install redis-server
    pip install -r requirements.txt
    ```
 
@@ -89,7 +93,6 @@ Follow these steps to set up and run the project locally:
     In a separate terminal, run
    ```bash
    cd backend
-   sudo apt-get install redis-server
    redis-server
    ```
 
@@ -125,6 +128,108 @@ Follow these steps to set up and run the project locally:
 
 ---
 
+### Installation Guide for Gitpod or Cloud Platforms
+
+Follow these steps to set up and run the **Visual Search Assistant** on Gitpod or other cloud-based development platforms:
+
+---
+
+### 1. Prerequisites  
+- **Gitpod Account**: Ensure you have an active Gitpod account and authorized access to your GitHub repository.  
+- **Redis Setup**: Ensure Redis is accessible on the platform (can be installed locally or via a managed service).  
+- **Cloud Platform Support**: This guide assumes Gitpod, but similar steps apply to other platforms like Codespaces.
+
+---
+
+### 2. Clone the Repository  
+
+1. Open Gitpod and initiate a new workspace for the project:  
+   ```bash
+   git clone https://github.com/Amar5623/visual-search-assistant.git
+   cd visual-search-assistant
+   ```
+
+---
+
+### 3. Backend Setup  
+
+1. Install Python dependencies:  
+   ```bash
+   cd backend
+   pip install -r requirements.txt
+   ```
+   also run this
+   ```bash
+   sudo apt-get install espeak-ng
+   ```
+
+2. Install Redis (if not pre-installed):  
+   ```bash
+   sudo apt-get install redis-server
+   ```
+
+3. Create a `.env` file in the `backend` directory:  
+   ```
+   HF_AUTH_TOKEN=your_huggingface_token
+   PORT=8000
+   ```
+
+4. Start Redis:  
+   In a new terminal window:  
+   ```bash
+   redis-server
+   ```
+
+5. Run the backend server:  
+   ```bash
+   uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+   ```
+
+---
+
+### 4. Frontend Setup  
+
+1. Navigate to the `frontend` directory:  
+   ```bash
+   cd frontend
+   ```
+
+2. Install Node.js dependencies:  
+   ```bash
+   npm install
+   ```
+
+3. Set up the environment variables in a `.env` file:  
+   ```
+   REACT_APP_BACKEND_URL=http://localhost:8000
+   ```
+
+4. Start the development server:  
+   ```bash
+   npm start
+   ```
+
+---
+
+### 5. Run the Application  
+
+- Access the **frontend** at `http://localhost:3000`.  
+- Test the application by uploading an image to generate a caption and playing the text-to-speech output.
+
+---
+
+### Additional Notes  
+
+- For Gitpod-specific URL adjustments, ensure the backend URL matches the Gitpod-provided public workspace URLs.  
+- In the `.env` file for the `frontend` (if not present create one with the given below code in it), replace `localhost` with your Gitpod workspace backend URL:  
+  ```
+  REACT_APP_BACKEND_URL=https://<backend-url>.gitpod.io
+  ```
+
+This ensures the frontend communicates with the backend correctly in the Gitpod environment.
+
+Feel free to reach out with issues or consult the [project repository](https://github.com/Amar5623/visual-search-assistant/tree/main) for further assistance.
+
 ## 📸 Screenshots
 
 ### Image Upload Interface  
@@ -132,11 +237,6 @@ Follow these steps to set up and run the project locally:
 
 ### Description and Audio Output  
 ![Description](Description-and-Audio-Output.png)
-
----
-
-## 🌐 Live Demo  
-Try the app here: [Visual Search Assistant Demo](https://your-live-app-url.com)  
 
 ---
 
@@ -158,7 +258,7 @@ Try the app here: [Visual Search Assistant Demo](https://your-live-app-url.com)
 
 | Metric                | Value              |
 |-----------------------|--------------------|
-| Average Response Time | ~7 seconds/image   |
+| Average Response Time | ~5 seconds/image   |
 | Audio Generation Time | ~3.1 seconds/file  |
 | Cache Hit Rate        | ~85%               |
 
