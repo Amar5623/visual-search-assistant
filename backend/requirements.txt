@@ -1,6 +1,9 @@
-fastapi
-uvicorn
-torch
-transformers
-gtts
-pillow
+coqui_tts==0.24.3
+fastapi==0.115.5
+Pillow==11.0.0
+python-dotenv==1.0.1
+redis==5.2.0
+torch==2.5.1
+transformers==4.46.1
+TTS==0.22.0
+uvicorn==0.32.1
