@@ -11,7 +11,7 @@ The **Visual Search Assistant** is a multimodal GenAI application that combines 
 
 ## 🎥 Demo Video
 
-[![Watch the Demo](https://img.youtube.com/vi/your-video-id/maxresdefault.jpg)](https://www.youtube.com/watch?v=your-video-id)
+[![Watch the Demo](https://img.youtube.com/vi/lCXE8kKoQEQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=lCXE8kKoQEQ)
 
 > *Click the thumbnail to watch the 1-minute video showcasing the app’s features!*
 
@@ -158,9 +158,9 @@ Try the app here: [Visual Search Assistant Demo](https://your-live-app-url.com)
 
 | Metric                | Value              |
 |-----------------------|--------------------|
-| Average Response Time | ~1.2 seconds/image |
-| Audio Generation Time | ~2.5 seconds/file |
-| Cache Hit Rate        | ~85%              |
+| Average Response Time | ~7 seconds/image   |
+| Audio Generation Time | ~3.1 seconds/file  |
+| Cache Hit Rate        | ~85%               |
 
 ---
 
